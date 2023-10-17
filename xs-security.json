@@ -1,9 +1,32 @@
 {
-  "scopes": [],
+  "xsappname": "my-bookshop",
+  "tenant-mode": "dedicated",
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.Admin",
+      "description": "Admin"
+    }
+  ],
   "attributes": [],
-  "role-templates": [],
+  "role-templates": [
+    {
+      "name": "Admin",
+      "description": "generated",
+      "scope-references": [
+        "$XSAPPNAME.Admin"
+      ],
+      "attribute-references": []
+    }
+  ],
   "oauth2-configuration": {
-    "redirect-uris": ["https://*.us10-001.hana.ondemand.com/**"]
-}
-
+    "token-validity": 3600,
+    "credential-types": [
+      "binding-secret",
+      "x509"
+    ],
+    "redirect-uris": [
+      "https://*cfapps.us10-001.hana.ondemand.com/**",
+      "https://*.us10.trial.applicationstudio.cloud.sap/**"
+    ]
+  }
 }

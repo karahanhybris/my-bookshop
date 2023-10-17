@@ -23,7 +23,7 @@
   "cds": {
     "requires": {
       "db": {
-        "kind": "sqlite",
+        "kind": "hana",
         "credentials": {
           "url": "db.sqlite",
           "database": "db/my-bookshop.db"
@@ -31,10 +31,10 @@
         "schema_evolution": "auto"
       },
       "[production]": {
-        "auth": "xsuaa",
         "db": {
           "kind": "hana"
-        }
+        },
+        "auth": "xsuaa"
       }
     }
   }
